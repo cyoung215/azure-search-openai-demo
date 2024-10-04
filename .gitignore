@@ -149,3 +149,6 @@ static/
 data/**/*.md5
 
 .DS_Store
+
+#MP data
+/workspaces/azure-search-openai-demo/data/MP/
