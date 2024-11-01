@@ -8,10 +8,11 @@ services:
     project: ./app/backend
     language: py
     # Please check docs/azure_container_apps.md for more information on how to deploy to Azure Container Apps
-    # host: containerapp
-    # docker:
-    #  remoteBuild: true
-    host: appservice
+    host: containerapp
+    docker:
+      remoteBuild: true
+    # Please check docs/azure_app_service.md for more information on how to deploy to Azure App Service
+    # host: appservice
     hooks:
       # This hook is called when App Service is the host
       prepackage:
@@ -64,11 +65,18 @@ pipeline:
       - AZURE_OPENAI_CHATGPT_DEPLOYMENT
       - AZURE_OPENAI_CHATGPT_DEPLOYMENT_CAPACITY
       - AZURE_OPENAI_CHATGPT_DEPLOYMENT_VERSION
+      - AZURE_OPENAI_CHATGPT_DEPLOYMENT_SKU
       - AZURE_OPENAI_EMB_MODEL_NAME
       - AZURE_OPENAI_EMB_DEPLOYMENT
       - AZURE_OPENAI_EMB_DEPLOYMENT_CAPACITY
       - AZURE_OPENAI_EMB_DEPLOYMENT_VERSION
+      - AZURE_OPENAI_EMB_DEPLOYMENT_SKU
       - AZURE_OPENAI_EMB_DIMENSIONS
+      - AZURE_OPENAI_GPT4V_MODEL
+      - AZURE_OPENAI_GPT4V_DEPLOYMENT
+      - AZURE_OPENAI_GPT4V_DEPLOYMENT_CAPACITY
+      - AZURE_OPENAI_GPT4V_DEPLOYMENT_VERSION
+      - AZURE_OPENAI_GPT4V_DEPLOYMENT_SKU
       - OPENAI_HOST
       - OPENAI_API_KEY
       - OPENAI_ORGANIZATION
